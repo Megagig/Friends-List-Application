@@ -18,6 +18,9 @@ mongoose.connect(process.env.MONGODB_URI, {}).then(() => {
 	console.log('Error connecting to the database', err);
 });
 
+//models initialization
+require("./models/users.model")
+
 //routes
 app.use('/api/v1/register', registerRouter);
 
