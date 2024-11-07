@@ -21,10 +21,6 @@ mongoose.connect(process.env.MONGODB_URI, {}).then(() => {
 //routes
 app.use('/api/v1/register', registerRouter);
 
-app.get('/', (req, res) => {
-	res.send('Hello World!');
-});
-
 const PORT = 5000;
 
 app.listen(PORT, () => console.log('Server is running on port 5000'));
