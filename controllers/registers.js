@@ -41,12 +41,15 @@ const registers = async (req, res) => {
 		});
 	}
 	
+	// hash the password
+	const hashedPassword = await bcrypt.hash(password, 12);
+	
 	// create a new user
 	const newUser = await usersModel.create({
 		firstName: firstName,
 		lastName: lastName,
 		email: email,
-		password: password,
+		password: hashedPassword,
 		confirm_password: confirm_password,
 		DOB: parsedDOB
 	})
